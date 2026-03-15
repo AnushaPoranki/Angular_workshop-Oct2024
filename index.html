@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .input-box, .display-box {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="input-box">
+        <h2>Enter Details</h2>
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="roll" placeholder="Roll Number">
+        <input type="number" id="age" placeholder="Age">
+        <button class="btn" onclick="displayDetails()">Submit</button>
+    </div>
+
+    <div class="display-box">
+        <h2>Display Details</h2>
+        <p><strong>Name:</strong> <span id="displayName">N/A</span></p>
+        <p><strong>Roll Number:</strong> <span id="displayRoll">N/A</span></p>
+        <p><strong>Age:</strong> <span id="displayAge">N/A</span></p>
+    </div>
+</div>
+
+<script>
+    function displayDetails() {
+        const name = document.getElementById("name").value;
+        const roll = document.getElementById("roll").value;
+        const age = document.getElementById("age").value;
+
+        document.getElementById("displayName").textContent = name || "N/A";
+        document.getElementById("displayRoll").textContent = roll || "N/A";
+        document.getElementById("displayAge").textContent = age || "N/A";
+    }
+</script>
+
+</body>
+</html>
